@@ -1,0 +1,8 @@
+# NOTE 12/28/2021 KAE: got error message running these two sets of functions:
+# ValueError: Classification metrics can't handle a mix of binary and continuous targets
+# so now begin effort to understand this message, first by dumping type, len of the output 
+print(type(ground), len(ground))
+print(type(results), len(results))
+print('ground:',ground)
+print('results:',results)
+

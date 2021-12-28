@@ -1,0 +1,15 @@
+START RequestId: db4c3ddc-2654-43e9-94cd-92ba9b16b119 Version: $LATEST
+28 Dec 2021 20:33:30,914 [INFO] (/var/runtime/bootstrap.py) main started at epoch 1640723610914
+28 Dec 2021 20:33:31,131 [INFO] (/var/runtime/bootstrap.py) init complete at epoch 1640723611132
+An error occurred (AccessDeniedException) when calling the InvokeEndpoint operation: User: arn:aws:sts::593203910587:assumed-role/sentiment_analysis_func-role-evkj1unw/sentiment_analysis_func is not authorized to perform: sagemaker:InvokeEndpoint on resource: arn:aws:sagemaker:us-east-1:593203910587:endpoint/sagemaker-pytorch-2021-12-28-20-17-30-411 because no identity-based policy allows the sagemaker:InvokeEndpoint action: ClientError
+Traceback (most recent call last):
+  File "/var/task/lambda_function.py", line 16, in lambda_handler
+    Body = event['body'])                       # The actual review
+  File "/var/runtime/botocore/client.py", line 386, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/var/runtime/botocore/client.py", line 705, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (AccessDeniedException) when calling the InvokeEndpoint operation: User: arn:aws:sts::593203910587:assumed-role/sentiment_analysis_func-role-evkj1unw/sentiment_analysis_func is not authorized to perform: sagemaker:InvokeEndpoint on resource: arn:aws:sagemaker:us-east-1:593203910587:endpoint/sagemaker-pytorch-2021-12-28-20-17-30-411 because no identity-based policy allows the sagemaker:InvokeEndpoint action
+
+END RequestId: db4c3ddc-2654-43e9-94cd-92ba9b16b119
+REPORT RequestId: db4c3ddc-2654-43e9-94cd-92ba9b16b119	Duration: 1315.21 ms	Billed Duration: 1316 ms	Memory Size: 128 MB	Max Memory Used: 69 MB	Init Duration: 398.96 ms	
